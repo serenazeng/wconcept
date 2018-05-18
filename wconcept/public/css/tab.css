@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+.margin {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+/*这是共用的价格 品牌名字的样式*/
+
+a span.brand {
+	width: 100%;
+	display: inline-block;
+	color: #626161;
+	font-size: 12px;
+	font-family: montserratregular;
+	text-align: left;
+	line-height: 14px;
+	height: 14px;
+	margin-top: 16px;
+}
+
+a span.name {
+	width: 100%;
+	display: block;
+	font-size: 12px;
+	width: 163px;
+	overflow: hidden;
+	white-space: nowrap;
+	line-height: 26px;
+	height: 26px;
+	text-align: left;
+	color: #9e9e9e;
+	font-family: PingFangSC, sans-serif;
+	margin-bottom: 3px;
+}
+
+a span.price {
+	font-size: 14px;
+	height: 22px;
+	line-height: 18px;
+	margin-top: 8px;
+	text-align: left;
+	color: #626161;
+	font-weight: bold;
+	font-family: PingFangSC, sans-serif;
+}
+
+
+/*这是table的css*/
+
+#table {
+		background: #000000;
+}
+
+#table .margin {
+	position: relative;
+}
+
+#table ul.nav li a {
+	color: #fff;
+	
+}
+
+#table ul.nav {
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#table ul.nav li a {
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 2px;
+	position: relative;
+}
+
+#table div.content{font-size: 14px;font-family: sans-serif;}
+#table div.content div.list{display: none;}
+
+#table div.content .new-product {
+	position: absolute;
+	width: 1100px;
+	display: flex;
+	justify-content: space-around;
+	padding: 0 10px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, .7);
+	margin: 0 auto;
+	top: 60px;
+	z-index: 99;
+	/*display: none;*/
+}
+
+div.content .new-product a {
+	display: block;
+	width: 163px;
+	padding-bottom: 20px;
+}
+
+div.content a img {
+	width: 100%;
+}
+
+#table div.content .old-product{
+	position: absolute;
+	width: 1100px;
+	display: flex;
+	
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, .9);
+	margin: 0 auto;
+	top: 60px;
+	z-index: 199;
+}
+#table div.content .old-product .left{
+	
+}
+#table div.content .old-product .left ul{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+#table div.content .old-product .left ul li{
+	width: 163px;
+	padding: 0 10px;
+	padding-top: 20px;
+
+	
+}
+#table div.content .old-product .left ul li a{
+	display: inline-block;
+	width: 163px;
+
+	padding-left: 12px;
+	margin-bottom: 25px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #626161;
+}
+#table div.content .old-product .right{
+	display: flex;
+	justify-content: space-around;
+}
+#table div.content .old-product .right a{
+	display: block;
+	width: 163px;
+	padding-bottom: 20px;
+	padding: 0 10px;
+	padding-top: 20px;
+}
+#table div.content .old-product .right a img{
+	width: 100%;
+}
+
+body{
+	height: 1000px;
+}

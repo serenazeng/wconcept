@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/config.css" />
+	</head>
+
+	<body>
+		<div id="top" class="clear">
+			<div class="margin">
+				<ul class="top-l">
+					<li>
+						<a href="#">注册</a>
+					</li>
+					<li>
+						<a href="#">登录</a>
+					</li>
+					<li class="down-app">
+						<a href="#">下载APP</a>
+						<img src="img/down_app.png" />
+					</li>
+				</ul>
+				<ul class="top-r">
+					<li>
+						<a href="#">购物车</a>
+					</li>
+					<li>
+						<a href="#">我的订单</a>
+					</li>
+					<li>
+						<a href="#">收藏</a>
+					</li>
+					<li>
+						<a href="#">消息</a>
+					</li>
+					<li class="pCenter">
+						<ul>
+							<li>
+								<a href="#">个人中心</a><i></i></li>
+							<li>
+								<a href="">购物车</a>
+								<li>
+									<li>
+										<a href="">收藏夹</a>
+									</li>
+									<li>
+										<a href="">W积分</a>
+									</li>
+									<li>
+										<a href="">优惠券</a>
+									</li>
+						</ul>
+						</li>
+						<li>
+							<a href="#">客户服务</a>
+						</li>
+						<li class="follow-us">
+							<a href="#">关注我们</a>
+							<img src="img/weixi.jpg" />
+						</li>
+				</ul>
+			</div>
+		</div>
+		<header class="margin" id="header">
+			<div class="center">
+				<a href="#" class="logo"><img src="img/logo.png" /></a>
+			</div>
+
+		</header>
+
+		<div id="apply" class="margin">
+			<div class="left">
+				<a>
+					<img src="img/account_init.png" />
+				</a>
+			</div>
+			<div class="right">
+				<div class="title">注册会员</div>
+				<form action="" method="post" id="register">
+					<div class="name">
+						<input type="text" class="input-text input-all" name="" id="name" value="" placeholder="请输入用户名" />
+					</div>
+					<div class="mobile">
+						<input type="text" class="input-text input-all" name="" id="mobile" value="" placeholder="请填写手机号码" />
+					</div>
+					<!--<div class="pic">
+						<input type="text" class="input-text short-msg input-all" name="" id="" value="" placeholder="请填写图形验证码" />
+						<a href="">xsn7</a>
+					</div>-->
+					<div class="msg">
+						<input type="text" class="input-text short-msg input-all" name="" id="confirm" value="" placeholder="短信验证码" />
+						<a href="">获取短信验证码</a>
+					</div>
+					<div class="pass">
+						<input type="password" class="input-text input-all" name="" id="pass" value="" placeholder="设置密码" /><i></i>
+						<input type="password" class="input-text input-all" name="" id="repass" value="" placeholder="确认密码" />
+						<input type="button" class="input-all submit" name="" value="立即注册" id="submit" />
+					</div>
+				</form>
+				<!--<div id="permit">
+				
+			</div>-->
+			</div>
+		</div>
+
+		<footer>
+			<div class="margin">
+				<div class="inFooter ">
+					<a href="">
+						<img src="img/memberLevel.png" />
+						<span>会员等级</span>
+					</a>
+					<a href="">
+						<img src="img/userManual.png" />
+						<span>用户手册</span>
+					</a>
+					<a href="">
+						<img src="img/down_app.png" />
+						<span>下载APP</span>
+					</a>
+					<a href="">
+						<img src="img/privacyItem.png" />
+						<span>隐私条款</span>
+					</a>
+					<a href="">
+						<img src="img/normalProblem.png" />
+						<span>常见问题</span>
+					</a>
+				</div>
+				<p class="copyright">
+					品牌合作联系方式：
+					<a href="">bd@wconcept.cn</a><br /><br /> 上海森画电子商务有限公司 版权所有 沪ICP备 15045419号－1<br /><br /> 沪公网安备 31010402002635号
+				</p>
+			</div>
+		</footer>
+		
+	</body>
+	<script src='libs/jquery-1.11.0.js'></script>
+	<script type="text/javascript">
+
+		var oName=document.getElementById("name");
+		var oTel=document.getElementById("mobile");
+ 		var oPass1=document.getElementById("pass");
+ 		var oPass2=document.getElementById("repass");
+ 		var oBtn=document.getElementById("submit");
+ 		var nameOnoff=false;
+		var ps1Onoff=false;
+		var ps2Onoff=false;
+		var telOnoff=false;
+		console.log($);
+
+
+//这是一个用户名
+ 		oName.onblur=function(){
+			var oNamev=oName.value;
+			var reg=/^[\w-\u2E80-\u9FFF]{4,20}$/;
+			if(oNamev==""){
+				oName.placeholder="输入框不能为空";
+					
+			}else{
+					if(reg.test(oNamev)){
+					oName.placeholder="";
+					nameOnoff=true;
+					}else{
+					oName.value="";
+					oName.placeholder="输入有误，请重新输入";
+
+//input[placeholder].style.color="red";
+					nameOnoff=false;
+					}
+				}
+
+		}
+ 		
+ //这是一个登录密码		
+		oPass1.onblur=function(){
+			var oPass1v=oPass1.value;
+			var reg=/^[\da-z\.\,\*]{6,18}$/;
+			if(oPass1v==""){
+				oPass1.placeholder="输入框不能为空";
+			}else{
+				if(reg.test(oPass1v)){
+					oPass1.placeholder="";
+					ps1Onoff=true;
+			var a=0;
+			var b=0;
+			var c=0;
+		  var reg1=/\d+/g;
+		  if(reg1.test(oPass1v)){
+		  	a=1;
+		  }else{
+		  	a=0;
+		  };
+		  var reg2=/[a-z]+/g;
+		  if(reg2.test(oPass1v)){
+		  	b=1;
+		  }else{
+		  	c=0;
+		  };
+		  var reg3=/[\.\,\*]+/g;
+		  if(reg3.test(oPass1v)){
+		  	c=1;
+		  }else{
+		  	c=0;
+		  }
+		  switch(a+b+c){
+		  	case 1: oPass1.nextElementSibling.innerHTML="弱";break;
+		  	case 2: oPass1.nextElementSibling.innerHTML="中";break;
+		  	case 3: oPass1.nextElementSibling.innerHTML="强";break;
+		  }
+		  
+					
+				}else{
+					oPass1.value="";
+					oPass1.placeholder="输入有误，请重新输入";
+					ps1Onoff=false;
+				}
+			}
+		}
+//这是确认密码
+
+		oPass2.onblur=function(){
+		
+			var oPass1v=oPass1.value;
+			var oPass2v=oPass2.value;
+			if(oPass2v===oPass1v){
+				oPass2.placeholder="";
+				ps2Onoff=true;
+			}else{
+				oPass2.value="";
+				oPass2.placeholder="两次输入不正确";
+				ps2Onoff=false;
+			}
+		}
+//这是手机号码的验证
+
+			
+			oTel.onblur=function(){
+				var oTelv=oTel.value;
+				var reg=/^1\d{10}$/;
+				if(reg.test(oTelv)){
+					oTel.placeholder="";
+					telOnoff=true;
+					
+				}else{
+					oTel.value="";
+					oTel.placeholder="请重新输入";
+					telOnoff=false;
+					
+				}
+			}
+
+	oBtn.onclick=function(){
+        console.log(1);
+        // if(nameOnoff&&ps1Onoff&&ps2Onoff&&telOnoff){
+					console.log(1)
+        var random = Math.round(Math.random()*10000);
+        var info={'userId':random,'name':oName.value,'pass':oPass1.value,'tel':oTel.value};
+                    $.ajax({
+                        // url:'http://localhost:3000/users',
+						url:'/register',
+                        data:info,
+                        success:function (res) {
+                            console.log(res);
+
+						}
+
+                        } );
+                    console.log(2)
+        		alert("注册成功！")
+				window.location.href = "http://localhost:3000/login.html";}
+
+
+
+	</script>
+
+</html>

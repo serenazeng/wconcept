@@ -1,0 +1,90 @@
+charset "utf-8";
+
+/* CSS Document */
+
+.margin {
+	width: 1100px;
+	margin: 0 auto;
+}
+/*这是banner的css*/
+
+#banner {
+	width: 1263px;
+	height: 500px;
+	position: relative;
+	overflow: hidden;
+}
+
+#banner .banner-img {
+	width: 1263px;
+	height: 500px;
+}
+
+#banner .banner-img li {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+#banner .banner-img li a{
+	display:block;
+	width: 100%;
+	height: 100%;
+}
+#banner .banner-img li a img {
+	display:block;
+	width: 100%;
+	height: 100%;
+}
+
+#banner div.dots {
+	position: absolute;
+	bottom: 3px;
+	width: 100%;
+	text-align: center;
+}
+
+#banner div.dots span {
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	border: 1px solid #FFFFFF;
+	margin: 0 5px;
+}
+#banner div.dots span.active{background: #FFFFFF;}
+#banner div.btn div.prev {
+	background: url(../img/left.png) no-repeat;
+	width: 33px;
+	height: 66px;
+	top: 248px;
+	left: 15px;
+	position: absolute;
+	z-index: 10;
+}
+
+#banner div.btn div.next {
+	background: url(../img/right.png) no-repeat;
+	width: 33px;
+	height: 66px;
+	top: 248px;
+	right: 15px;
+	position: absolute;
+	z-index: 10;
+}
+
+
+
+
+
+/*这是二级banner*/
+
+#level2-banner {
+	margin-top: 65px;
+}
+
+#level2-banner a {
+	display: block;
+	height: 200px;
+	width: 100%;
+	background: url(../img/180115wopcmb01.jpg) no-repeat 50% 0;
+}

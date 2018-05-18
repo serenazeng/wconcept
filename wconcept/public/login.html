@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/config.css" />
+	</head>
+
+	<body>
+		<!DOCTYPE html>
+		<html>
+
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+			<link rel="stylesheet" type="text/css" href="css/config.css" />
+		</head>
+
+		<body>
+			<div id="top" class="clear">
+				<div class="margin">
+					<ul class="top-l">
+						<li>
+							<a href="#">注册</a>
+						</li>
+						<li>
+							<a href="#">登录</a>
+						</li>
+						<li class="down-app">
+							<a href="#">下载APP</a>
+							<img src="img/down_app.png" />
+						</li>
+					</ul>
+					<ul class="top-r">
+						<li>
+							<a href="#">购物车</a>
+						</li>
+						<li>
+							<a href="#">我的订单</a>
+						</li>
+						<li>
+							<a href="#">收藏</a>
+						</li>
+						<li>
+							<a href="#">消息</a>
+						</li>
+						<li class="pCenter">
+							<ul>
+								<li>
+									<a href="#">个人中心</a><i></i></li>
+								<li>
+									<a href="">购物车</a>
+									<li>
+										<li>
+											<a href="">收藏夹</a>
+										</li>
+										<li>
+											<a href="">W积分</a>
+										</li>
+										<li>
+											<a href="">优惠券</a>
+										</li>
+							</ul>
+							</li>
+							<li>
+								<a href="#">客户服务</a>
+							</li>
+							<li class="follow-us">
+								<a href="#">关注我们</a>
+								<img src="img/weixi.jpg" />
+							</li>
+					</ul>
+				</div>
+			</div>
+			<header class="margin" id="header">
+
+				<div class="center">
+					<a href="#" class="logo"><img src="img/logo.png" /></a>
+				</div>
+
+			</header>
+
+			<div id="apply" class="margin">
+				<div class="left">
+					<a>
+						<img src="img/account_init.png" />
+					</a>
+				</div>
+				<div class="right">
+					<div class="title">会员登录</div>
+					<form action="" method="post" id="register">
+						<div class="mobile">
+							<input type="text" class="input-text input-all" name="" id="name" value="" placeholder="请填写手机号码" />
+						</div>
+
+						<div class="pass">
+							<input type="password" class="input-text input-all" name="" id="pass" value="" placeholder="登录密码" />
+
+							<input type="button" class="input-all submit" name="" value="登录" id="submit"/>
+						</div>
+					</form>
+					<div id="permit">
+						<input type="checkbox" name="" id="" value="" class="checkbox" />
+
+						<span class="remember">7天内免登录</span>
+						<span class="">忘记密码?</span>
+						<span class="jianke">|</span>
+						<span class=""><a href="">快速注册</a></span>
+					</div>
+				</div>
+			</div>
+
+			<footer>
+				<div class="margin">
+					<div class="inFooter ">
+						<a href="">
+							<img src="img/memberLevel.png" />
+							<span>会员等级</span>
+						</a>
+						<a href="">
+							<img src="img/userManual.png" />
+							<span>用户手册</span>
+						</a>
+						<a href="">
+							<img src="img/down_app.png" />
+							<span>下载APP</span>
+						</a>
+						<a href="">
+							<img src="img/privacyItem.png" />
+							<span>隐私条款</span>
+						</a>
+						<a href="">
+							<img src="img/normalProblem.png" />
+							<span>常见问题</span>
+						</a>
+					</div>
+					<p class="copyright">
+						品牌合作联系方式：
+						<a href="">bd@wconcept.cn</a><br /><br /> 上海森画电子商务有限公司 版权所有 沪ICP备 15045419号－1<br /><br /> 沪公网安备 31010402002635号
+					</p>
+				</div>
+			</footer>
+
+		</body>
+		<script src='libs/jquery-1.11.0.js'></script>
+		<script type="text/javascript">
+ 			var oBtn=document.getElementById("submit");
+			var oName=document.getElementById("name");
+			var oPass1=document.getElementById("pass");
+			var ocheck=document.getElementsByClassName("checkbox")[0];
+			oBtn.onclick = function(){
+                var info={'name':oName.value,'pass':oPass1.value};
+                $.ajax({
+                    // url:'http://localhost:3000/users',
+                    url:'/login',
+                    data:info,
+                    success:function (res) {
+                        console.log(res)
+                        if (res=="yes"){
+                            alert("登录成功");
+                            window.location="./?"+oName.value;
+
+							console.log(window.location)
+
+
+                        }
+                        else {
+                            alert("密码错误");
+                        }
+                    }
+                });}
+
+
+
+			ocheck.addEventListener("click",function(){
+					setCookie("name",oName.value,7);
+					setCookie("pass",oPass1.value,7)
+
+			})
+
+		function setCookie(name,value,timer){
+	        var date =new Date;
+	        date.setDate(date.getDate()+timer);
+	        document.cookie = name+"="+value+";expires="+date+";path=/"
+	    }
+		
+
+
+		</script>
+
+		</html>

@@ -1,0 +1,42 @@
+charset "utf-8";
+
+/* CSS Document */
+
+.margin {
+	width: 1100px;
+	margin: 0 auto;
+}
+.hotGood{overflow: hidden;}
+.hotGood a{display: block;
+			width: 204px;
+			float: left;
+			margin-bottom: 26px;
+			margin-right: 20px;
+			}
+.hotGood a:nth-child(5n+5){
+	margin-right: 0;
+}
+.hotGood a .img{
+	display: block;
+	width: 100%;
+	
+}
+.hotGood a .img img{
+	display: block;
+	width: 100%;
+	
+}
+#hotGood .more{
+	text-align: center;
+	margin-bottom:40px ;
+}
+#hotGood .more a{
+	display:inline-block;
+	height: 35px;
+	line-height: 35px;
+	width: 120px;
+	background: #000000;
+	color: #FFFFFF;
+	font-family: montserratregular;
+	font-size: 14px;
+}

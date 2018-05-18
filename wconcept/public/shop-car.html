@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>wconcept尤为</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/config.css" />
+
+	<body>
+		<!--这是顶部-->
+		<div id="top" class="clear">
+			<div class="margin">
+				<ul class="top-l">
+					<li>
+						<a id="register1" href="http://localhost/wconcept1/apply.html">注册</a>
+					</li>
+					<li>
+						<a id="longin1" href="http://localhost/wconcept1/login.html">登录</a>
+					</li>
+					<li class="down-app">
+						<a href="#">下载APP</a>
+						<img src="img/down_app.png" />
+					</li>
+				</ul>
+				<ul class="top-r">
+					<li>
+						<a href="#">购物车</a>
+					</li>
+					<li>
+						<a href="#">我的订单</a>
+					</li>
+					<li>
+						<a href="#">收藏</a>
+					</li>
+					<li>
+						<a href="#">消息</a>
+					</li>
+					<li class="pCenter">
+						<ul>
+							<li>
+								<a href="#">个人中心</a><i></i></li>
+							<li>
+								<a href="">购物车</a>
+								<li>
+									<li>
+										<a href="">收藏夹</a>
+									</li>
+									<li>
+										<a href="">W积分</a>
+									</li>
+									<li>
+										<a href="">优惠券</a>
+									</li>
+						</ul>
+						</li>
+						<li>
+							<a href="#">客户服务</a>
+						</li>
+						<li class="follow-us">
+							<a href="#">关注我们</a>
+							<img src="img/weixi.jpg" />
+						</li>
+				</ul>
+			</div>
+		</div>
+		<!--这是头部-->
+		<header class="margin header">
+			
+		</header>
+		
+		<div id="goodsInfo" class="margin">
+			
+		</div>
+		<!--<div id="goodsInfo" class="margin">
+			<a><img src="img/wimg_450755092_3434865.jpg"/></a>
+			<a>
+				<span class="brand">MARGESHERWOOD</span><br />
+				<span class="name">VAVA方形搭扣牛皮单肩斜跨包_多色</span>
+			</a>
+			<a>
+			
+			</a>
+			<a>
+				<span class="finalprice">¥1,999.00</span><br />
+				<span class="tax">税0.00%</span>
+			</a>
+			<a class="te" id="te">
+				<em class="te">数量：</em>
+				<span class="number te">
+				<span class="minus">-</span>
+					<input type="text" name="" id="" value="1" class="items-qty"/>
+				<span class="plus">+</span>
+				</span>
+			</a>
+			<a>
+				<span class="price" id="price">
+					¥ 1,999.00
+				</span>	
+			</a>
+			<a>
+				<span class="delete" id="delete">
+					删除
+				</span>	
+			</a>
+		</div>-->
+		
+		<div id="bottom" class="margin">
+			
+		</div>
+		
+		<footer>
+			<div class="margin">
+				<div class="inFooter ">
+					<a href=>
+						<img src="img/memberLevel.png" />
+						<span>会员等级</span>
+					</a>
+					<a href="">
+						<img src="img/userManual.png" />
+						<span>用户手册</span>
+					</a>
+					<a href="">
+						<img src="img/down_app.png" />
+						<span>下载APP</span>
+					</a>
+					<a href="">
+						<img src="img/privacyItem.png" />
+						<span>隐私条款</span>
+					</a>
+					<a href="">
+						<img src="img/normalProblem.png" />
+						<span>常见问题</span>
+					</a>
+				</div>
+				<p class="copyright">
+					品牌合作联系方式：
+					<a href="">bd@wconcept.cn</a><br /><br /> 上海森画电子商务有限公司 版权所有 沪ICP备 15045419号－1<br /><br /> 沪公网安备 31010402002635号
+				</p>
+			</div>
+		</footer>
+
+		<div id="go-to-shop" class="margin">
+
+			<a class="shopCar">
+				<span id="">购物车</span>
+				<i></i>
+				<b class="itemnum">0</b>
+			</a>
+		</div>
+		<div id="go-to-top" class="margin">
+			<a href=""></a>
+		</div>
+
+
+	</body>
+	<script type="text/javascript" src="libs/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="libs/require.js"></script>
+	<script type="text/javascript" src="module/chajian.js"></script>
+	
+	<script type="text/javascript">
+	function shopcar(){
+		console.log(document.URL);
+			this.number=document.URL.slice(-1);
+			console.log(this.number)
+			console.log(document.URL.slice(-2));
+			this.load();
+		}
+	shopcar.prototype.load=function(){
+			var that=this;
+		$.ajax({
+	 		type:"get",
+			url:"/index",
+			data:{"detail":"list"},
+			success:function(res){
+				console.log(res);
+				var data=res[that.number];
+				var str="";
+				
+				str=`<a><img src="${data.image_url0}" /></a>
+			<a id="change">
+				<span class="brand" >"${data.brand_name}"</span><br />
+				<span class="name">"${data.name}"</span>
+			</a>
+			<a></a>
+			<a>
+				<span class="finalprice">"${data.final_price}"</span><br />
+				<span class="tax">税0.00%</span>
+			</a>
+			<a class="te" id="te">
+				<em class="te">数量：</em>
+				<span class="number te">
+				<span class="minus">-</span>
+					<input type="text" name="" id="" value="1" class="items-qty"/>
+				<span class="plus">+</span>
+				</span>
+			</a>
+			<a>
+				<span class="price" id="price">
+					"${data.final_price}"
+				</span>	
+			</a>
+			<a>
+				<span class="delete" id="delete">
+					删除
+				</span>	
+			</a>`
+			
+				$("#goodsInfo").html(str);
+				var int1=getCookie("shopcar");
+				int1=JSON.parse(int1);
+				$(".items-qty").val(int1.number);
+				$(".itemnum").html(int1.number);
+				
+				$(".delete").on("click",function(){
+					$("#goodsInfo").remove();
+				})
+			}
+		})
+		}
+		new shopcar();
+// 		var ologin=document.getElementById("longin1");
+// //		console.log(ologin)
+// 	window.onload = function(){
+// 			var name = window.location.search;
+// //			console.log(name)
+// 			name = name.slice(1);
+//
+// 			var res = getCookie(name);
+// //			console.log(getCookie(name))
+//
+// 			var res = JSON.parse(res);
+// 			if(res && res.onoff == "true"){
+// 				ologin.innerHTML="";
+// 				ologin.innerHTML = "你好,"+name+"";
+// 				ologin.style.color="#2D2D2D";
+// 				ologin.style.fontWeight="600";
+//
+//
+// 			}
+// 		}
+// 	ologin.onclick = function(){
+// 				var res = getCookie(name);
+// 				res = JSON.parse(res);
+// 				res.onoff = "false";
+// 				var str = JSON.stringify(res);
+// 				setCookie(res.name,str);
+// 				ologin.innerHTML="";
+// 				ologin.innerHTML = "请登录"
+// //				window.history.go(0);
+// 			}
+//
+// 	function setCookie(name,value,timer){
+// 	        var date =new Date;
+// 	        date.setDate(date.getDate()+timer);
+// 	        document.cookie = name+"="+value+";expires="+date+";path=/";
+// 	    }
+//
+		function getCookie(name){
+	        var arr = document.cookie.split("; ");
+	        for(var i=0;i<arr.length;i++){
+	            arr2 = arr[i].split("=");
+	            if(arr2[0] == name){
+	                return arr2[1];
+	            }
+	        }
+	        return "";
+	    }
+
+// 		function removeCookie(name){
+//     	    setCookie(name,1,-1);
+//    		}
+		
+	</script>
+
+</html>
+

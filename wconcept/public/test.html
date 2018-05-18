@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+
+
+         		var a = 10;
+		var b = a;
+		b = 20;
+		console.log(a,b);
+		
+		var obj1 = {
+			name:"张三"
+		}
+		var obj2 = obj1;
+		obj2.name = "李四"
+		
+		console.log(obj1,obj2)
+		var a = {
+        name:"张三"
+    }
+    var b = {
+        name:"李四"
+    }
+    function change(obj){
+        obj.name = "老张";
+        obj = b;
+        return obj;
+    }
+    console.log(change(a))
+    var newName = change(a);
+    console.log(newName.name);//lisi
+    console.log(a.name);//laozhang
+    
+//  function fn( a,b,c){ console.log(a,b,c) }
+//              fn(1,2)        //1,2，unde
+//              
+//              function fn( a,b,c,c){ console.log(a,b,c,c) }
+//              fn(2,3,5)        //1,2，unde
+//              
+//              
+//              function fn( a,b,c){ console.log(a,b,c) }
+//              fn(1,2,3,3)        //1,2，3
+//              function fn(a){
+//                      a=20;
+//                      console.log(a);                //20
+//                      console.log(arguments[0]);     //20
+//                  }
+//                  fn(10);
+//function fn(a){
+//	"use strict"
+//	 
+//                      a=20;
+//                      console.log(a);                //20
+//                      console.log(arguments[0]);     //10
+//                  }
+//                  fn(10);
+//var arr = [1,2,3,4,5,5,1,2,3,4,5,6,7,7,7,7];
+//function norepeat(a){
+//			var newarr = [];
+//			for(var i=0;i<a.length;i++){
+//				if(newarr.indexOf(a[i]) == -1){
+//					newarr.push(a[i]);
+//				}
+//			}
+//			return newarr;
+//		}
+//		console.log(norepeat(arr));
+//var arr=[1,1,2,2,5,6,7,8,8,8,8,8,8,"2"];
+//				for(i=0;i<arr.length;i++){
+//					for(j=i+1;j<arr.length;j++){
+//						if(arr[i]===arr[j]){
+//							arr.splice(j,1)
+//							j--;
+//						}
+//					}
+//				}
+//				console.log(arr);
+//  
+
+//		1.统计字符串中每个字符的个数？
+		
+		var str = "hhello world";
+//		利用对象的key和value
+//		将字符串分割成数组，方便遍历
+		var arr = str.split("");
+//		创建一个对象,用于存储每个字符和对应的次数
+		var obj = {};
+//		遍历这个数组，获取到数组的value
+		arr.forEach(function(value){
+//			这个时候，对象里面什么都没有，创建一个变量，用于保存对象的key，这个key是数组的value
+console.log(obj[value])
+			var a = obj[value];
+//		第一次执行程序,或者遍历到一个新的字符的时候，对象的这个key都还没有被创建，所以，a为undefined，所以为false
+			if(a){
+				obj[value] = ++a;//当a为undefined的时候，不执行这一行，当a有值的时候，执行这一行，累加
+			}else{
+//				当a为undefined的时候，执行这一行，为obj创建一个key，这个key和数组的value重名，这个key的值为1
+				obj[value] = 1;
+			}
+		})
+		console.log(obj)
+  </script>
+</html>
